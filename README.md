@@ -24,14 +24,23 @@ The project dealt with two types of issues to get it into a cleaned state:
 1. Tidiness issues : The issues are based on [tidiness principles](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html). In my dataset, I dealt with melting the 'doggo', 'floofer', 'puppo', and 'pupper' columns of the [twitter-enhanced-csv.csv](https://github.com/TayloredSuites/TwitterReport/blob/main/twitter_archive_enhanced.csv) file,  and merging the all three datasets ([twitter-enhanced-csv.csv](https://github.com/TayloredSuites/TwitterReport/blob/main/twitter_archive_enhanced.csv) , [tweets_json](https://github.com/TayloredSuites/TwitterReport/blob/main/tweets_json.txt) which is the API JSON text file , and the [image_predictions.tsv](https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad_image-predictions/image-predictions.tsv) for the image predictions) into one DataFrame.
 2. Quality issues :
 i. There were some rows that do not fulfill the no retweet condition.
+
 ii. Changing the data type of several columns: timestamp datatype, 'rating_numerator' and 'rating_denominator' columns to float64 datatype, tweet_id to string (object) and not an integer, retweet_count and favorite_count  to int.
+
 iii. 'rating_numerator' column of the enhanced table had a maximum value of 1776. It is an outlier. [Why?](http://knowyourmeme.com/memes/theyre-good-dogs-brent)
-iv. 'rating_denominator' column of the enhanced table has a maximum value of 170. It is impossible
+
+iv. 'rating_denominator' column of the enhanced table has a maximum value of 170. It is impossible.
+
 v. Some dogs have entries in more than one stage.
+
 vi. these are good dogs, Brent. And that's why they should not have a rating of 0, rather a rating of 10 seems more logical. I will assume that is a typo.
+
 vii. there are some decimal dog ratings which need to be extracted.
+
 viii. dropping all needless columns in the dataset.
+
 ix. remove all needless rows from, the master table . This coincides with tidiness issue one. I changed all NaN values in the dog age columns to empty ones and went on to concatenate them.
+
 
 - ## Summary of Findings
 
